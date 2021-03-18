@@ -22,32 +22,6 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Add pom.xml with dependency
-        run: |
-          cat > pom.xml << EOM
-          <?xml version="1.0" encoding="UTF-8"?>
-          <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-            <modelVersion>4.0.0</modelVersion>
-            <groupId>${{ env.GROUP_ID }}</groupId>
-            <artifactId>${{ env.ARTIFACT_ID }}</artifactId>
-            <version>${{ env.VERSION }}</version>
-            <dependencies>
-              <dependency>
-                <groupId>${{ env.TARGET_GROUP_ID }}</groupId>
-                <artifactId>${{ env.TARGET_ARTIFACT_ID }}</artifactId>
-                <version>${{ env.TARGET_VERSION }}</version>
-              </dependency>    
-            </dependencies>
-            <repositories>
-              <repository>
-                <id>github-public</id>
-                <url>https://public:&#56;538964239ca66dda0ba60738699571d1688c709@maven.pkg.github.com/github-packages-examples/*</url>
-              </repository>
-            </repositories>
-          </project>
-          EOM
-
       - name: Add ${{ env.CLASS_NAME }}.java file
         run: |
           SOURCE_PATH=src/main/java/$(echo ${{ env.GROUP_ID }} | tr . /)

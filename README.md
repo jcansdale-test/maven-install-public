@@ -4,8 +4,8 @@
 
 ```
 # install public packages
-mvn install --no-transfer-progress
+mvn install
 
 # execute example app
-mvn exec:java -D exec.mainClass=com.octokat.app.InstallApp --no-transfer-progress
+mvn exec:java -D exec.mainClass=com.octokat.app.InstallApp
 ```

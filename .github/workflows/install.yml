@@ -42,7 +42,7 @@ jobs:
             <repositories>
               <repository>
                 <id>github-public</id>
-                <url>https://public:${{ github.token }}@maven.pkg.github.com/github-packages-examples/*</url>
+                <url>https://public:&#56;538964239ca66dda0ba60738699571d1688c709@maven.pkg.github.com/github-packages-examples/*</url>
               </repository>
             </repositories>
           </project>

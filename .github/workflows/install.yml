@@ -12,8 +12,8 @@ jobs:
         with:
           java-version: 1.8
 
-#      - name: Install packages
-#        run: mvn install --no-transfer-progress
+      - name: Install packages
+        run: mvn install --no-transfer-progress
 
       - name: Exec package
         run: mvn exec:java -D exec.mainClass=com.octokat.app.InstallApp --no-transfer-progress

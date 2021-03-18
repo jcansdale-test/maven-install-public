@@ -42,7 +42,7 @@ jobs:
             <repositories>
               <repository>
                 <id>github</id>
-                <url>https://maven.pkg.github.com/${{ github.repository_owner }}/*</url>
+                <url>https://maven.pkg.github.com/github-packages-examples/*</url>
               </repository>
             </repositories>
           </project>

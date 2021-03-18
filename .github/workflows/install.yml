@@ -22,24 +22,6 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Add ${{ env.CLASS_NAME }}.java file
-        run: |
-          SOURCE_PATH=src/main/java/$(echo ${{ env.GROUP_ID }} | tr . /)
-          mkdir -p $SOURCE_PATH
-          cat <<- END > $SOURCE_PATH/${{ env.CLASS_NAME }}.java
-          package ${{ env.GROUP_ID }};
-
-          import ${{ env.TARGET_GROUP_ID }}.${{ env.TARGET_CLASS_NAME }};
-
-          public class ${{ env.CLASS_NAME }}
-          {
-              public static void main( String[] args )
-              {
-                  ${{ env.TARGET_CLASS_NAME }}.main( new String[0] );
-              }
-          }
-          END
-
       - name: Install packages
         run: mvn install --no-transfer-progress
 

@@ -18,4 +18,8 @@
       <url>https://public:&#56;538964239ca66dda0ba60738699571d1688c709@maven.pkg.github.com/github-packages-examples/*</url>
     </repository>
   </repositories>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
 </project>
